@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership Alignment Workshop Agenda | Tekion Corp.</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --teal:         #04DEBB;
+    --teal-dk:      #17B79F;
+    --teal-xdk:     #0a8a76;
+    --teal-lt:      rgba(4,222,187,0.09);
+    --teal-border:  rgba(4,222,187,0.25);
+    --navy:         #0d2137;
+    --navy-md:      #163352;
+    --bg-page:      #f1f5f9;
+    --bg-white:     #ffffff;
+    --bg-offwhite:  #f7f9fc;
+    --border:       #e2e8f0;
+    --border-md:    #cbd5e1;
+    --text-primary: #0f172a;
+    --text-body:    #334155;
+    --text-muted:   #64748b;
+    --text-faint:   #94a3b8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-body);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .page {
+    max-width: 980px;
+    margin: 32px auto;
+    background: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    border: 1px solid var(--border);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    padding: 36px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle at bottom right, rgba(4,222,187,0.09) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .wordmark {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 5px;
+  }
+  .header-sub {
+    font-size: 14px;
+    color: var(--teal);
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    padding-top: 18px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.42);
+  }
+  .header-meta span strong {
+    color: rgba(255,255,255,0.88);
+    display: block;
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  /* BODY */
+  .body { padding: 40px 48px 52px; }
+
+  /* ADKAR */
+  .adkar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .ak {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    text-align: center;
+    background: var(--bg-offwhite);
+  }
+  .ak.d1 {
+    background: rgba(4,222,187,0.07);
+    border-color: var(--teal-border);
+  }
+  .ak.d2 {
+    background: rgba(13,33,55,0.06);
+    border-color: rgba(13,33,55,0.18);
+  }
+  .ak-letter {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+  .ak.d1 .ak-letter { color: var(--teal-xdk); }
+  .ak.d2 .ak-letter { color: var(--navy); }
+  .ak-word {
+    font-size: 10px;
+    color: var(--text-faint);
+    margin-top: 3px;
+  }
+  .ak-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    color: var(--text-faint);
+  }
+  .ak.d1 .ak-tag { color: var(--teal-dk); }
+  .ak.d2 .ak-tag { color: var(--navy-md); }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding: 10px 14px;
+    background: var(--bg-offwhite);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .leg-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* DAY LABEL */
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 36px 0 12px;
+  }
+  .day-header:first-of-type { margin-top: 0; }
+  .day-pill {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: #fff;
+    background: var(--navy);
+    white-space: nowrap;
+  }
+  .day-sub {
+    font-size: 12px;
+    color: var(--text-faint);
+    font-style: italic;
+  }
+
+  /* SESSION ROWS */
+  .sessions { display: flex; flex-direction: column; gap: 3px; }
+
+  .session-row {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .session-row.util {
+    background: var(--bg-offwhite);
+  }
+  .session-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-faint);
+    padding: 12px 10px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+    background: var(--bg-offwhite);
+  }
+  .session-content {
+    padding: 12px 16px;
+    background: var(--bg-white);
+  }
+  .session-row.util .session-content {
+    background: var(--bg-offwhite);
+  }
+  .session-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .session-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .session-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .t-align   { background: rgba(26,98,181,0.08);  color: #1a62b5; border-color: rgba(26,98,181,0.22); }
+  .t-create  { background: rgba(22,163,74,0.08);  color: #16a34a; border-color: rgba(22,163,74,0.22); }
+  .t-enable  { background: rgba(245,158,11,0.10); color: #b45309; border-color: rgba(245,158,11,0.28); }
+  .t-commit  { background: rgba(220,38,38,0.07);  color: #b91c1c; border-color: rgba(220,38,38,0.22); }
+  .t-meta    { background: var(--bg-offwhite);    color: var(--text-faint); border-color: var(--border); }
+  .t-virtual { border: 1px solid rgba(245,158,11,0.35); color: #b45309; }
+
+  /* DIVIDER */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+
+  /* DINNER NOTE */
+  .dinner-note {
+    background: var(--bg-offwhite);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+  .dinner-note strong { color: var(--text-primary); font-weight: 600; }
+
+  /* FOOTER NOTE */
+  .end-note {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--teal-lt);
+    border: 1px solid var(--teal-border);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-body);
+  }
+  .end-note strong { color: var(--teal-xdk); }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg-offwhite);
+    border-top: 1px solid var(--border);
+    padding: 16px 48px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-faint);
+  }
+  footer strong { color: var(--teal-xdk); }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; border: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="wordmark">TEKION</div>
+    <h1>Leadership Alignment Workshop</h1>
+    <div class="header-sub">Phase 1 Agenda &nbsp;·&nbsp; Customer Value Transformation</div>
+    <div class="header-meta">
+      <span><strong>Dates</strong>April 27–28, 2026</span>
+      <span><strong>Participants</strong>Mark Riggs + CS Leadership (~10)</span>
+      <span><strong>Format</strong>In-Person / Hybrid</span>
+      <span><strong>Model</strong>Co-Creation</span>
+      <span><strong>Produced by</strong>BP Learning Solutions</span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- ADKAR -->
+    <div class="adkar">
+      <div class="ak d1">
+        <div class="ak-letter">A</div>
+        <div class="ak-word">Awareness</div>
+        <div class="ak-tag">Day 1</div>
+      </div>
+      <div class="ak d1">
+        <div class="ak-letter">D</div>
+        <div class="ak-word">Desire</div>
+        <div class="ak-tag">Day 1</div>
+      </div>
+      <div class="ak d1">
+        <div class="ak-letter">K</div>
+        <div class="ak-word">Knowledge</div>
+        <div class="ak-tag">Day 1–2</div>
+      </div>
+      <div class="ak d2">
+        <div class="ak-letter">A</div>
+        <div class="ak-word">Ability</div>
+        <div class="ak-tag">Day 2</div>
+      </div>
+      <div class="ak d2">
+        <div class="ak-letter">R</div>
+        <div class="ak-word">Reinforcement</div>
+        <div class="ak-tag">Day 2</div>
+      </div>
+    </div>
+
+    <!-- LEGEND -->
+    <div class="legend">
+      <div class="legend-item"><div class="leg-dot" style="background:rgba(26,98,181,0.5)"></div>Alignment</div>
+      <div class="legend-item"><div class="leg-dot" style="background:rgba(22,163,74,0.5)"></div>Co-creation</div>
+      <div class="legend-item"><div class="leg-dot" style="background:rgba(245,158,11,0.5)"></div>Enablement</div>
+      <div class="legend-item"><div class="leg-dot" style="background:rgba(220,38,38,0.5)"></div>Commitment</div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-header">
+      <span class="day-pill">Day 1 — The What</span>
+      <span class="day-sub">Shared understanding. Model co-creation. Artifact foundations. April 27.</span>
+    </div>
+
+    <div class="sessions">
+
+      <div class="session-row">
+        <div class="session-time">8:30</div>
+        <div class="session-content">
+          <div class="session-title">Opening + Identity Shift</div>
+          <div class="session-desc">Mark opens with the burning platform — IPO readiness, cost of staying reactive, what's at stake (30 min). Brett facilitates the Identity Shift discussion anchored to pre-survey responses — surfaces real assumptions before positions harden (30 min).</div>
+          <div class="session-tags"><span class="tag t-align">Alignment</span><span class="tag t-meta">Mark · Brett · 60 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">9:30</div>
+        <div class="session-content">
+          <div class="session-title">Dealer Maturity Model — Co-Creation Session</div>
+          <div class="session-desc">Draft DMM introduced as a working framework. Leaders stress-test tier definitions against real accounts in working groups. Nik's nuance on dealer complexity and generational variability built into the tiers. Canada's 3-year gap from the US flagged as a calibration input.</div>
+          <div class="session-tags"><span class="tag t-create">Co-creation</span><span class="tag t-meta">Nik · Brett · 75 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row util">
+        <div class="session-time">10:45</div>
+        <div class="session-content">
+          <div class="session-title">Break</div>
+          <div class="session-tags"><span class="tag t-meta">15 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">11:00</div>
+        <div class="session-content">
+          <div class="session-title">Role Architecture — CVM, CVA, Virtual Value Assistance</div>
+          <div class="session-desc">Clear boundaries, shared responsibilities, and the handoff model between all three tracks. Now grounded in the DMM — what each role does changes depending on dealer tier. Addresses the CVM/CVA overlap friction James and Justin named. VVA positioned as a full third of the model.</div>
+          <div class="session-tags"><span class="tag t-align">Alignment</span><span class="tag t-meta">James · Brett · 60 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row util">
+        <div class="session-time">12:00</div>
+        <div class="session-content">
+          <div class="session-title">Lunch</div>
+          <div class="session-tags"><span class="tag t-meta">60 min · unstructured</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">13:00</div>
+        <div class="session-content">
+          <div class="session-title">Customer Value Plan — Co-Creation Session</div>
+          <div class="session-desc">CVP structure introduced as a working draft. Tamsen, Justin, and Pooja (virtual) define what each section requires from CVM vs. CVA. Canada onramp logic shaped by Pooja's market context. Output: a CVP architecture the full leadership team owns going into Phase 2.</div>
+          <div class="session-tags"><span class="tag t-create">Co-creation</span><span class="tag t-virtual">Pooja virtual</span><span class="tag t-meta">Tamsen · Justin · Pooja · 75 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row util">
+        <div class="session-time">14:15</div>
+        <div class="session-content">
+          <div class="session-title">Break</div>
+          <div class="session-tags"><span class="tag t-meta">15 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">14:30</div>
+        <div class="session-content">
+          <div class="session-title">CVR Template — Working Session</div>
+          <div class="session-desc">Leaders co-create the structural skeleton of the Customer Value Review template. What sections must be in every CVR. What varies by tier. What the CVM owns vs. what the CVA contributes. A draft template will be shared in advance — this session stress-tests and refines it. Output is a template framework; detailed build happens in Phase 2.</div>
+          <div class="session-tags"><span class="tag t-create">Co-creation</span><span class="tag t-meta">Keiji · Brett · 60 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row util">
+        <div class="session-time">15:30</div>
+        <div class="session-content">
+          <div class="session-title">Break</div>
+          <div class="session-tags"><span class="tag t-meta">15 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">15:45</div>
+        <div class="session-content">
+          <div class="session-title">Touchpoint System — Check-In, CVR, CVP as a Connected System</div>
+          <div class="session-desc">How the three instruments work together — cadence by maturity tier, ownership model, and the practical difference between a Check-In and a CVR. Mark opens with the strategic rationale for the system; Brett walks through the mechanics and integration logic. Explicitly not a QBR rebrand.</div>
+          <div class="session-tags"><span class="tag t-align">Alignment</span><span class="tag t-meta">Mark · Brett · 60 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">16:45</div>
+        <div class="session-content">
+          <div class="session-title">Day 1 Close</div>
+          <div class="session-desc">What was decided today. What stays open for Day 2. Mark closes with the leadership ask — what he needs each person to carry back to their teams. Parking lot reviewed. Sets the tone for dinner.</div>
+          <div class="session-tags"><span class="tag t-align">Alignment</span><span class="tag t-meta">Brett · Mark · 15 min</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dinner-note"><strong>End Day 1 — 17:00</strong> &nbsp;·&nbsp; Team Dinner 5:30 PM &nbsp;·&nbsp; No agenda. Intentionally unstructured. The relationship work that happens here powers Day 2.</div>
+
+    <hr>
+
+    <!-- DAY 2 -->
+    <div class="day-header">
+      <span class="day-pill">Day 2 — The How</span>
+      <span class="day-sub">Barriers named. Metrics agreed. Tools built. Commitments made. April 28.</span>
+    </div>
+
+    <div class="sessions">
+
+      <div class="session-row">
+        <div class="session-time">8:30</div>
+        <div class="session-content">
+          <div class="session-title">Day 2 Open — From Alignment to Activation</div>
+          <div class="session-desc">Recap of Day 1 decisions. One open item resolved from the parking lot. Frame the day: leaders leave with tools in hand, not just language in their heads.</div>
+          <div class="session-tags"><span class="tag t-align">Alignment</span><span class="tag t-meta">Brett · 20 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">8:50</div>
+        <div class="session-content">
+          <div class="session-title">Friction Audit — What's in the Way</div>
+          <div class="session-desc">Four-barrier framework (skills, environment/tools, incentives, motivation) applied to the CVM and CVA tracks separately. Energy is highest here — use it. Controlled space to surface the concerns Tamsen, Nik, and Justin raised, with leadership in the room to respond. Groups report out; outputs feed directly into the Metrics Framework.</div>
+          <div class="session-tags"><span class="tag t-create">Co-creation</span><span class="tag t-meta">Brett · All · 60 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">9:50</div>
+        <div class="session-content">
+          <div class="session-title">Metrics Framework — What Good Looks Like</div>
+          <div class="session-desc">Leading and lagging indicators by role, informed directly by the friction outputs. Agrees on 30/60/90-day proof points for CVM, CVA, and VVA tracks. A common scoreboard — not a performance review. Accountability named before anyone leaves the room.</div>
+          <div class="session-tags"><span class="tag t-create">Co-creation</span><span class="tag t-meta">Brett · Mark · 60 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row util">
+        <div class="session-time">10:50</div>
+        <div class="session-content">
+          <div class="session-title">Break</div>
+          <div class="session-tags"><span class="tag t-meta">15 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">11:05</div>
+        <div class="session-content">
+          <div class="session-title">Manager Enablement Toolkit — Introduction and Build</div>
+          <div class="session-desc">Coaching framework for reinforcing the new model in 1:1s and team huddles. Conversation guides for the identity shift, role boundary questions, and maturity-tier conversations. Leaders adapt templates to their team's actual starting point — not a generic handout to file away.</div>
+          <div class="session-tags"><span class="tag t-enable">Enablement</span><span class="tag t-meta">Brett · All · 55 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">12:00</div>
+        <div class="session-content">
+          <div class="session-title">Change Messaging — How Leaders Talk About This</div>
+          <div class="session-desc">The language leaders use in the first 30 days makes or breaks this. Each leader drafts the CVM and CVA messaging they'll use with their own team. Directly addresses the transparency anxiety Tamsen and Nik flagged — not by softening the change, but by giving leaders the specific words to hold it confidently.</div>
+          <div class="session-tags"><span class="tag t-enable">Enablement</span><span class="tag t-meta">Brett · All · 45 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row util">
+        <div class="session-time">12:45</div>
+        <div class="session-content">
+          <div class="session-title">Lunch</div>
+          <div class="session-tags"><span class="tag t-meta">60 min · unstructured</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">13:45</div>
+        <div class="session-content">
+          <div class="session-title">90-Day Operating Commitments</div>
+          <div class="session-desc">Each leader names three specific commitments for the first 90 days — behaviors, conversations, or artifacts they will personally own. Documented in the room. Not a promise to the consultant. A promise to the team. Mark closes this session.</div>
+          <div class="session-tags"><span class="tag t-commit">Commitment</span><span class="tag t-meta">All · Mark · 45 min</span></div>
+        </div>
+      </div>
+
+      <div class="session-row">
+        <div class="session-time">14:30</div>
+        <div class="session-content">
+          <div class="session-title">Phase 2 Preview and Close</div>
+          <div class="session-desc">What happens next — Phase 2 enablement scope, CVM and CVA track launch dates, and what leaders need to complete before those sessions begin. Mark closes the two days. Brett holds the room for final open items.</div>
+          <div class="session-tags"><span class="tag t-align">Alignment</span><span class="tag t-meta">Brett · Mark · 30 min</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="end-note"><strong>End by 15:00</strong> &nbsp;·&nbsp; Leaders depart with decisions documented, toolkit in hand, and 90-day commitments on record. Post-workshop summary distributed within 48 hours.</div>
+
+  </div>
+
+  <footer>
+    <span><strong>TEKION</strong> &nbsp;·&nbsp; Customer Value Transformation &nbsp;·&nbsp; Phase 1</span>
+    <span>Produced by <strong>BP Learning Solutions</strong> &nbsp;·&nbsp; bp-learningsolutions.com &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Confidential</span>
+  </footer>
+
+</div>
+</body>
+</html>
